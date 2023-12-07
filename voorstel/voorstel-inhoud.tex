@@ -3,37 +3,58 @@
 \section{Introductie}%
 \label{sec:introductie}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Het voorspellen van sportwedstrijden is al lang een zeer populaire bezigheid onder sportfans en gokkers. De uitslagen van deze wedstrijden voorspellen is echter niet altijd even gemakkelijk. Er zijn namelijk veel verschillende factoren die hierin een rol spelen.
+Machine Learning (ML), een onderdeel van kunstmatige intelligentie, biedt een potentieel hulpmiddel om de uitslagen van wedstrijden te voorspellen. Door het verzamelen en analyseren van verschillende gegevens, kan een ML model patronen en trends identificeren die dan gebruikt kunnen worden om een mogelijke uitslag te voorspellen.
+Het gebruik van ML bij het voorspellen van voetbalwedstrijden is niet nieuw. Toch zijn er nog steeds veel mogelijkheden om dit te verbeteren. In deze bachelorproef wordt een antwoord gegeven op de vraag: “Hoe kan de toepassing van Machine Learning bijdragen tot het voorspellen van voetbalwedstrijden in de Engelse Premier League?”. Om tot dit antwoord te komen worden verschillende deelvragen onderzocht:
 
 \begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
+  \item	Welke ML techniek is het meest geschikt voor deze toepassing? Supervised, Unsupervised of Reinforced learning.
+  \item	Welk algoritme is het meest geschikt voor deze toepassing?
+  \item	Welke statistieken hebben een significante invloed op het eindresultaat?
+  \item	Hoe kunnen de resultaten van de ML modellen worden geëvalueerd om de nauwkeurigheid en betrouwbaarheid van de voorspellingen te bepalen?
+  \item	Wat zijn de beperkingen van ML bij het voorspellen van voetbalwedstrijden en hoe kunnen ze worden opgelost?
+  \item	Hoe kan de voorspellende nauwkeurigheid van ML-modellen voor voetbalwedstrijden worden verbeterd?
 \end{itemize}
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
-
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+Tijdens dit onderzoek werd gebruikgemaakt van verschillende soorten data: historische wedstrijdresultaten, teamstatistieken, speler statistieken, blessure- en schorsingsrapporten en weersomstandigheden. De historische wedstrijdresultaten en teamstatistieken werden verzameld uit openbare bronnen en databases. De speler statistieken werden eveneens opgehaald uit openbare bronnen en databases. Deze bevatten data zoals: doelpunten, assists, tackles, passes, etc. De blessure- en schorsingsrapporten werden verzameld uit de officiële website van de Engelse Premier League. De weersomstandigheden werden opgehaald uit een meteorologische database en bevat data zoals: temperatuur, neerslag en wind.
+Als antwoord op de onderzoeksvraag werd een prototype opgesteld. Dit prototype werd opgesteld op basis van de antwoorden op de gestelde deelvragen.
 
 %---------- Stand van zaken ---------------------------------------------------
 
-\section{State-of-the-art}%
+\section{Literatuurstudie}%
 \label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+De afgelopen jaren is de interesse in het toepassen van Machine Learning (ML) in sport toegenomen, zeker bij het voorspellen van voetbalwedstrijden. Deze interesse is deels te wijten aan de groeiende beschikbaarheid van datasets, variërend van speler statistieken tot wedstrijdresultaten. Deze data kan nuttig zijn voor spelers en coaches om hun prestaties te verbeteren, maar ook voor wie wedt op sportevenementen en de bedrijven hierachter.
+Om een voetbalwedstrijd te voorspellen moet je rekening houden met veel diverse factoren. \textcite{Stuebinger2020} en \textcite{Rodrigues2022} illustreerden de waarden van gedetailleerde speler statistieken waaronder: lichaamsmetingen, pas nauwkeurigheid, behendigheid, reactie en agressie. Bovendien werd informatie over de prestaties van teams tijdens de wedstrijden - zoals: doelpunten, schoten op kader en aantal hoekschoppen - ook als cruciale data beschouwd. Alhoewel de studie van \textcite{Sathyanarayana2022} over cricket gaat, word hier ook de invloed van weersomstandigheden toegelicht.
+Daarnaast werd in de studie van \textcite{Baboota2019} de onvoorspelbaarheid van de sport benadrukt. Ondanks de uitgebreide data-analyse en complexe modellen kunnen er nog steeds verassingen en onverwachte uitkomsten voorkomen, zoals de historische titelzege van Leicester City in 2016.
+Tot slot, naast de speler- en teamstatistieken, tonen de studies ook aan dat andere factoren zoals het 'thuisvoordeel' en het verloop van de voorgaande wedstrijd(en) ook een aanzienlijke invloed hebben op het eindresultaat.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+Het verfijnen van de data speelt een cruciale rol in het voorspellen van de resultaten met ML. \textcite{Bunker2019} maakte onderscheid tussen 'wedstrijd gerelateerde' en 'externe' factoren. Waarbij deze eerste slaan op de factoren die binnen de wedstrijd vallen zoals: gemaakte meters, passes, enz. Terwijl de 'externe' factoren verwijzen naar de elementen buiten de wedstrijd, zoals recente prestaties en beschikbare spelers.
+\textcite{Rodrigues2022} daarentegen creëert nieuwe variabelen om het eindresultaat beter te kunnen voorspellen. Er werden twee soorten variabelen aangemaakt:
+\begin{itemize}
+  \item het aantal thuisoverwinningen van het thuisspelende team,
+  \item het aantal uitoverwinningen van het bezoekende team.
+\end{itemize}
+Een te grote dataset met veel verschillende features is ook niet al te best om een goede voorspelling te maken. \textcite{Baboota2019} had een totaal van 33 verschillende features waaruit ze de best presterende en meest relevante features haalden aan de hand van feature selection.
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+Nadat de data verzameld en opgeschoond is, kunnen de modellen getraind worden. Er zijn meerdere ML-modellen die toegepast kunnen worden. Het doel is om te voorspellen of het resultaat een winst (W), gelijkspel (D) of een verlies (L) is voor de thuisploeg, dit wil zeggen dat gebruik gemaakt moet worden van classificatiemodellen.
+\textcite{Rodrigues2022} experimenteerde met een breed scala aan modellen, waaronder: Naive Bayes, K-nearest neighbours, random forest, support vector machines, Xgboost en logistic regression. Ook gebuikte hij Artifical Neural Networks, een deep learning model die ook \textcite{Bunker2019}, \textcite{Carloni2021} en \textcite{Azeman2022} gebruikten in hun studies. 
+Daarnaast gebruikten \textcite{Stuebinger2020} en \textcite{Andrews2021} ook deze modellen. Stuebinger gebruikte random forest en boosting technieken, deze zijn nuttig voor het omgaan met zowel numerieke als categorische invoer en helpen bij het vermijden van overfitting. Ook gebruikte hij SVM (Support Vector Machines) en Linear Regression, waarbij deze laatste eenvoudig statistisch te interpreteren is.
+De hoeveelheid aan modellen gebruikt in de verschillende studies geeft aan dat er een brede keuze is aan ML-modellen voor de voorspelling van voetbalwedstrijden.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+Om de modellen nog beter te laten presteren kunnen deze altijd nog geoptimaliseerd worden. Een van de meest voorkomende technieken is het gebruik van een grid search. Dit is een methode waarbij een reeks vooraf gedefinieerde waarden van parameters wordt gebruikt om het optimale model te vinden. Voor elke combinatie van parameters wordt het model getraind en getest om zo de best presterende combinatie te verkrijgen. Meer info hierover  vind je in “Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow” door \autocite{Geron2019}.
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+Nu de modellen geoptimaliseerd en getraind zijn kunnen ze geëvalueerd en vergeleken worden. Hiervoor moeten de juiste prestatie indicatoren gekozen worden die het meest relevant zijn voor het probleem.
+\textcite{Stuebinger2020} gebruikte een combinatie van nauwkeurigheid, root mean squared error en de mean absolute deviation om de prestaties van hun modellen te berekenen. Hierbij presteerde het random forest model het beste met de hoogste nauwkeurigheid.
+Daarentegen beoordeelde \textcite{Rodrigues2022} de prestaties aan de hand van hun nauwkeurigheid en het percentage correct voorspelde gelijke spelen en overwinningen van zowel de thuisploeg als de uitploeg. In dit onderzoek bleek het SVM model de hoogste nauwkeurigheid te behalen.
+\textcite{Azeman2022} gebruikte een uitgebreidere set van prestatie-indicatoren, waaronder: nauwkeurigheid, precisie en recall. Deze indicatoren nemen zowel het aantal correcte voorspellingen als de balans tussen de voorspellingen van positieve en negatieve klassen in overweging.
+Er zijn veel verschillende methoden om de prestatie te bereken en er is geen optimale prestatiemaatstaf. Het is belangrijk om de prestatiemaatstaven te kiezen die relevant zijn voor de opdracht.
+
+Op basis van hun uitgebreide studies kwamen de verschillende onderzoekers aan bij differente conclusies.
+\textcite{Bunker2019} en \textcite{Andrews2021} benadrukken de noodzaak van meer nauwkeurige ML-modellen in de sportvoorspelling. Dit vooral met het oog op het hoge volume aan sportweddenschappen en de behoefte van sportmanagers aan nuttige informatie voor het ontwikkelen van toekomstige strategieën. Andrews wijst specifiek op het belang van het gebruik van grote datasets voor de training van modellen, gezien de inherente onvoorspelbaarheid van de sport.
+Tegelijkertijd tonen de studies van \textcite{Rodrigues2022} en \textcite{Azeman2022} aan dat het testen van verschillende variabelencombinaties succesvol kan zijn. Deze studies leveren modellen op met hoge succespercentages. Rodrigues wees random forest, SVM en Xgboost aan als de beste algoritmen. Azeman vond dat de Multiclass Decision Forest accurater en preciezer was dan het neuraal netwerk en de two-class SVM.
+Dergelijke conclusies tonen aan dat machine learning een potentieel krachtig instrument is voor het voorspellen van voetbalwedstrijden. Maar ze tonen ook de uitdagingen die nog bestaan, zoals het juiste model met juiste variabelen kiezen en het rekening houden met een breed scala aan factoren voor het verbeteren van de nauwkeurigheid van de voorspellingen. Ondanks de indrukwekkende vooruitgang in dit gebied is er nog verder onderzoek nodig over dit onderwerp.
+
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -42,31 +63,23 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
-
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
-
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
-
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
-
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
-
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+Dit onderzoek start met een  literatuurstudie die verschillende Machine Learning (ML) modellen, technieken en de verschillende prestatiemaatstaven bestudeert.
+Na de literatuurstudie haalt een Python script de benodigde data uit diverse bronnen op waardoor één grote dataset met alle benodigde data verkregen wordt. Deze bronnen zijn, onder andere, openbare databases waaruit: historische wedstrijdresultaten, speler statistieken, teamstatistieken en weersomstandigheden opgehaald worden. Daarnaast voorziet de officiële website van de Engelse Premier League blessure- en schorsingsrapporten.
+Wanneer alle data in één dataset verzameld zit, kan de data cleaning fase beginnen. Een Python script verwijdert onbelangrijke kolommen en vult ontbrekende gegevens aan. Deze fase bepaalt welke factoren de grootste invloed hebben op de uiteindelijke uitslag en bekijkt of combinaties van verschillende factoren een sterkere factor kunnen creëren. Ten slotte, wordt de dataset opgesplitst in een trainings- en testset om de prestatie van de ML-modellen te berekenen.
+Nadat de data cleaning fase voltooid is, trainen de ML-modellen op de trainingsdataset. Omdat er voorspeld wordt of de wedstrijd eindigt op een winst (W), gelijkspel (D) of verlies (L), wordt gebruikgemaakt van classificatiemodellen. Decision Tree, Random Forrest en Support vector machines zijn een paar voorbeelden van de verschillende te testen classificatie modellen. Deep learning modellen zoals neurale netwerken komen ook aan bod. Hierna volgt een optimalisatiefase die de beste parameters aan elk model geeft. 
+Eens alle modellen getraind en geoptimaliseerd zijn kunnen deze geëvalueerd worden. Dit aan de hand van verschillende prestatiemaatstaven, zoals: nauwkeurigheid (accuracy), precision, recall, Z1-score, Confusion Matrix en andere. De ML-modellen krijgen een grondige evaluatie op basis van het bekomen, uitgebreide overzicht aan prestatiemaatstaven. 
+Als laatste stap worden conclusies getrokken over de bekomen resultaten. Er wordt bekeken welke factoren het meest doorwegen op het eindresultaat en welke ML-modellen het beste presteren.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
-
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
-
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
-
+Uit het onderzoek wordt verwacht dat Machine Learning (ML) een mogelijk hulpmiddel kan zijn bij het voorspellen van voetbalwedstrijden. Omdat voetbal een zeer onvoorspelbare sport is zullen de resultaten nooit 100\% accuraat zijn. De resultaten kunnen wel een goede indicatie zijn naar een mogelijke uitslag van de wedstrijd.
+De factoren die vermoedelijk het meeste invloed op het eindresultaat zullen hebben zijn de 'historische wedstrijduitslagen' en het 'thuisvoordeel'. Dit is logisch aangezien resultaten van vorige wedstrijden een goede indicator kunnen zijn naar een volgende wedstrijd. Daarenboven speelt de thuisploeg vaker in eigen stadion en heeft zij meer aanwezige supporters.
+De factor weersomstandigheden daarentegen zal geen aanzienlijke rol spelen. Deze factor kan het spelbeeld van een wedstrijd zeker beïnvloeden maar zal geen significante invloed hebben op de uitslag.
+Het deep learning model neurale netwerken wordt voorspelt het beste te presteren. Dit model is zeer complex en zeer goed in patronen herkennen. Wat bij deze dataset extra belangrijk is aangezien er veel verschillende factoren zijn die een rol spelen bij de voorspellingen.
+De nauwkeurigheid van de voorspellingen wordt verwacht een percentage tussen de 65\% en 70\% te hebben. Dit is zeer goed aangezien voetbal een onvoorspelbare sport is. 
